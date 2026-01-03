@@ -1,6 +1,23 @@
 import React from 'react'
 import Image from 'next/image'
 import DataTable from './components/DataTable'
+import Link from 'next/link'
+
+const columns: DataTableColumn<TrendingCoin>[] = [
+  {
+    header: 'Name', cellClassName: 'name-cell', cell: (coin) => {
+      const item = coin.item;
+
+      return(
+        <Link href={`/coin/${item.id}`}>
+          
+            <Image src={item.large} alt={item.name} width={24} height={24} />
+            <p>{item.name}</p>
+        </Link>
+      )
+    }
+  }
+]
 
 const page = () => {
   return <main className='main-container'>
@@ -16,7 +33,9 @@ const page = () => {
       </div>
   
       <p>Trending Coins</p>
-      <DataTable />
+      <DataTable 
+      data={[]} 
+      columns={ [ { header: 'Title'}, { header: 'Price'}]}/>
     </section>
 
     <section className='w-full mt-7 space-y-4'>
