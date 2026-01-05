@@ -1,13 +1,12 @@
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
-import { cn } from "@/lib/utils"
+} from '@/components/ui/table';
+import { cn } from '@/lib/utils';
 
 const DataTable = <T,>({
   columns,
@@ -17,9 +16,9 @@ const DataTable = <T,>({
   headerRowClassName,
   bodyRowClassName,
   headerClassName,
-}:DataTableProps<T>) => {
+}: DataTableProps<T>) => {
   return (
-   <Table className={cn('custom-scrollbar', tableClassName)}>
+    <Table className={cn('custom-scrollbar', tableClassName)}>
       <TableHeader className={headerClassName}>
         <TableRow className={cn('hover:bg-transparent!', headerRowClassName)}>
           {columns.map((column, i) => (
@@ -38,7 +37,7 @@ const DataTable = <T,>({
             key={rowKey(row, rowIndex)}
             className={cn(
               'overflow-hidden rounded-lg border-b border-purple-100/5 hover:bg-dark-400/30! relative',
-              bodyRowClassName,
+              bodyRowClassName
             )}
           >
             {columns.map((column, columnIndex) => (
@@ -50,7 +49,7 @@ const DataTable = <T,>({
         ))}
       </TableBody>
     </Table>
-  )
-}
+  );
+};
 
-export default DataTable
+export default DataTable;
