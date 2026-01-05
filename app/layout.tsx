@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import Header from './components/Header';
+import Header from '@/components/Header';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Coinpulse',
-  description: 'Cryptro Screener App with a built-in High-Frequency Terminal & Dashboard',
+  title: 'CoinPulse',
+  description: 'Crypto Screener App with a built-in High-Frequency Terminal & Dashboard',
 };
 
 export default function RootLayout({
